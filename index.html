@@ -1,0 +1,65 @@
+<?php
+  include 'connect.php';
+
+  if(isset($_POsT['submit'])){
+    $nim = htmlentities($_POST['nim']);
+    $name = htmlentities($_POST['name']);
+    $hp = htmlentities($_POST['hp']);
+    $email = htmlentities($_POST['email']);
+    $sosmed = htmlentities($_POST['sosmed']);
+    $peminatan = htmlentities($_POST['peminatan']);
+
+    $query = $connect->prepare("INSERT INTO 'tbPendaftaran'('nim','name','hp','email','sosmed','peminatan') VALUES (:nim,:name,:hp,:email,:sosmed,:peminatan)");
+    $query->bindParam(":nim", $nim);
+    $query->bindParam(":name", $name);
+    $query->bindParam(":hp", $hp);
+    $query->bindParam(":email", $email);
+    $query->bindParam(":sosmed", $sosmed);
+    $query->bindParam(":peminatan", $peminatan);
+
+    $query->execute();
+
+    header("location: index.php")
+  }
+?>
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Daftar Open Class</title>
+   <style media="all">
+     @import "style.css";
+   </style>
+ </head>
+ <body><center>
+   <a href=""><img src="ksl.png" alt="pendaftaran" style="width:594px;height:577px;"></a>
+   <h1>KSL UBL</h1>
+   <form method="post">
+   <div class="container">
+     <div class="top">
+       <a>Pendaftaran Open Class</a>
+     </div>
+     <div class="left">
+      <ul>
+        NIM
+        Name
+        No HP
+        Email
+        Sosmed
+        Peminatan
+      </ul>
+     </div>
+     <div class="right">
+       <input type="text" name="nim" placeholder="NIM" /><br>
+       <input type="text" name="name" placeholder="Name" /><br>
+       <input type="text" name="hp" placeholder="No HP" /><br>
+       <input type="text" name="email" placeholder="Email" /><br>
+       <input type="text" name="sosmed" placeholder="Sosmed" /><br>
+       <input type="submit" name="submit" />
+     </div>
+   </div>
+  </form>
+</center></body>
+</html>

@@ -1,0 +1,41 @@
+body {
+	margin: 5px 0;
+	padding:0;
+	font: 74% Arial, sans-Serif;
+	color:#FFF;
+	background-color:#eee;
+	line-height:1.4em;
+	background: #7D8085;
+}
+.container {
+	border-style: solid;
+  background: blue;
+  color: #a0a0a0;
+  margin: 0 auto;
+  padding: 0;
+  width: 500px;
+  background: #3D3E42 repear-y center;
+}
+
+.top {
+  background: red;
+  height: 30px;
+  margin: 10px 0 0 0;
+  padding: 0;
+  padding: 10px 0 0 20px;
+}
+
+.top a {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.left {
+  background: yellow;
+  clear: both;
+  font-size: 140%;
+  float: left;
+  width: 150px;
+  margin: 0 2px 0 0 !important;
+  margin: 0 20px 0 0px;
+}
